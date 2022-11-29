@@ -1,0 +1,10 @@
+*.js
+!jest.config.js
+!LustreRepoTrigger/index.js
+*.d.ts
+node_modules
+.ipynb_checkpoints
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
