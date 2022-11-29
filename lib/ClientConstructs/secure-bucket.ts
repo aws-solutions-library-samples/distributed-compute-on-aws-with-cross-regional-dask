@@ -1,11 +1,14 @@
-import { Stack } from 'aws-cdk-lib';
-import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
+import { Stack } from "aws-cdk-lib";
+import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import {
   BlockPublicAccess,
   Bucket,
   BucketEncryption,
-} from 'aws-cdk-lib/aws-s3';
-import { NagSuppressions } from 'cdk-nag';
+} from "aws-cdk-lib/aws-s3";
+import { NagSuppressions } from "cdk-nag";
 
 // Bucket is for launching a secure bucket for logging access to
 export const secureBucket = (
@@ -23,7 +26,7 @@ export const secureBucket = (
   if (!accessLogsBucket) {
     NagSuppressions.addResourceSuppressions(
       bucket,
-      [{ id: 'AwsSolutions-S1', reason: 'Access logs bucket' }],
+      [{ id: "AwsSolutions-S1", reason: "Access logs bucket" }],
       true
     );
   }

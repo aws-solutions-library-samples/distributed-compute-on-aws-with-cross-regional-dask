@@ -1,6 +1,9 @@
-import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
-import { AwsCustomResource, AwsSdkCall } from 'aws-cdk-lib/custom-resources';
-import { Construct } from 'constructs';
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
+import { PolicyStatement } from "aws-cdk-lib/aws-iam";
+import { AwsCustomResource, AwsSdkCall } from "aws-cdk-lib/custom-resources";
+import { Construct } from "constructs";
 
 interface SSMParameterReaderProps {
   parameterName: string;
@@ -16,13 +19,13 @@ export class SSMParameterReader extends AwsCustomResource {
     const { parameterName, region, account } = props;
 
     const ssmAwsSdkCall: AwsSdkCall = {
-      service: 'SSM',
-      action: 'getParameter',
+      service: "SSM",
+      action: "getParameter",
       parameters: {
         Name: parameterName,
       },
       region,
-      physicalResourceId: { id: 'getParameter' }, // Update physical id to always fetch the latest version
+      physicalResourceId: { id: "getParameter" }, // Update physical id to always fetch the latest version
     };
 
     super(scope, name, {
@@ -33,7 +36,7 @@ export class SSMParameterReader extends AwsCustomResource {
             resources: [
               `arn:aws:ssm:${region}:${account}:parameter/${parameterName}`,
             ],
-            actions: ['ssm:GetParameter'],
+            actions: ["ssm:GetParameter"],
           }),
         ],
       },
@@ -41,6 +44,6 @@ export class SSMParameterReader extends AwsCustomResource {
   }
 
   public getParameterValue(): string {
-    return this.getResponseField('Parameter.Value').toString();
+    return this.getResponseField("Parameter.Value").toString();
   }
 }

@@ -1,10 +1,13 @@
-import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
+import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import {
   AwsCustomResource,
   AwsCustomResourcePolicy,
   AwsSdkCall,
-} from 'aws-cdk-lib/custom-resources';
-import { Construct } from 'constructs';
+} from "aws-cdk-lib/custom-resources";
+import { Construct } from "constructs";
 
 interface ParameterProps {
   DataRepositoryPath: string;
@@ -28,21 +31,21 @@ export class CreateDataLinkRepoClient extends AwsCustomResource {
     } = props;
 
     const ssmAwsSdkCall: AwsSdkCall = {
-      service: 'FSx',
-      action: 'createDataRepositoryAssociation',
+      service: "FSx",
+      action: "createDataRepositoryAssociation",
       parameters: {
         DataRepositoryPath,
         FileSystemId,
         FileSystemPath,
       },
-      physicalResourceId: { id: 'createDataRepositoryAssociation' },
+      physicalResourceId: { id: "createDataRepositoryAssociation" },
     };
 
     super(scope, name, {
       onUpdate: ssmAwsSdkCall,
       policy: AwsCustomResourcePolicy.fromStatements([
         new PolicyStatement({
-          actions: ['fsx:CreateDataRepositoryAssociation'],
+          actions: ["fsx:CreateDataRepositoryAssociation"],
           resources: [
             `arn:aws:fsx:${region}:${account}:association/${FileSystemId}/*`,
             `arn:aws:fsx:${region}:${account}:file-system/${FileSystemId}`,
@@ -50,12 +53,12 @@ export class CreateDataLinkRepoClient extends AwsCustomResource {
         }),
         new PolicyStatement({
           actions: [
-            's3:Get*',
-            's3:List*',
-            's3:PutObject',
-            'iam:CreateServiceLinkedRole',
-            'iam:AttachRolePolicy',
-            'iam:PutRolePolicy',
+            "s3:Get*",
+            "s3:List*",
+            "s3:PutObject",
+            "iam:CreateServiceLinkedRole",
+            "iam:AttachRolePolicy",
+            "iam:PutRolePolicy",
           ],
           resources: AwsCustomResourcePolicy.ANY_RESOURCE,
         }),

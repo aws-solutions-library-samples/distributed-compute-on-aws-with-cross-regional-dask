@@ -1,3 +1,6 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 import { Stack, App, StackProps, RemovalPolicy } from "aws-cdk-lib";
 import { Code, Repository } from "aws-cdk-lib/aws-codecommit";
 import {

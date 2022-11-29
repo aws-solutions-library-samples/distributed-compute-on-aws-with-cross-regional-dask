@@ -1,3 +1,6 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 import { App, Aspects } from "aws-cdk-lib";
 import { ClientRegion } from "../lib/ClientConstructs/client-region-stack";
 import { ClientToWorkerTransitGatewayRoute } from "../lib/ClientConstructs/client-region-tgw-route";

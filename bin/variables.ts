@@ -1,3 +1,6 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 import { IClient, IWorker } from "./interface";
 
 export const client: IClient = { region: "eu-west-2", cidr: "10.0.0.0/16" };

@@ -1,9 +1,12 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 import {
   AwsCustomResource,
   AwsCustomResourcePolicy,
   AwsSdkCall,
-} from 'aws-cdk-lib/custom-resources';
-import { Construct } from 'constructs';
+} from "aws-cdk-lib/custom-resources";
+import { Construct } from "constructs";
 
 interface AcceptTGWRequestClientProps {
   attachmentId: string;
@@ -23,13 +26,13 @@ export class AcceptTGWRequestClient extends AwsCustomResource {
     const { attachmentId, region, account } = props;
 
     const ssmAwsSdkCall: AwsSdkCall = {
-      service: 'EC2',
-      action: 'acceptTransitGatewayPeeringAttachment',
+      service: "EC2",
+      action: "acceptTransitGatewayPeeringAttachment",
       parameters: {
         TransitGatewayAttachmentId: attachmentId,
       },
       region,
-      physicalResourceId: { id: 'acceptTransitGatewayPeeringAttachment' },
+      physicalResourceId: { id: "acceptTransitGatewayPeeringAttachment" },
     };
 
     super(scope, name, {
