@@ -14,6 +14,7 @@ import {
   Peer,
   Port,
   SecurityGroup,
+  SubnetType,
   Vpc,
 } from "aws-cdk-lib/aws-ec2";
 import { DockerImageAsset, Platform } from "aws-cdk-lib/aws-ecr-assets";
@@ -328,6 +329,9 @@ export class WorkerRegion extends Stack {
         instanceType: new InstanceType("m5d.4xlarge"),
         minCapacity: 0,
         maxCapacity: 12,
+        vpcSubnets: {
+          subnetType: SubnetType.PRIVATE_WITH_EGRESS,
+        },
       },
     });
     NagSuppressions.addResourceSuppressions(
