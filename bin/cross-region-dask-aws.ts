@@ -9,8 +9,8 @@ import { WorkerRegion } from "../lib/WorkerConstructs/worker-region-stack";
 import { WorkerRegionTransitGatewayRoute } from "../lib/WorkerConstructs/worker-region-tgw-route";
 import { WorkerToWorkerTGW } from "../lib/WorkerConstructs/worker-to-worker-tgw";
 import { AwsSolutionsChecks } from "cdk-nag";
-import { SyncLustreToOpenSearch } from "../lib/WorkerConstructs/sync-lustre-to-opensearch";
 import { client, workers } from "./variables";
+import { SyncLustreToOpenSearch } from "../lib/WorkerConstructs/sync-lustre-to-opensearch";
 
 const app = new App();
 // The clients configuration which includes the region and cidr range to which the notebook and scheduler will sit
