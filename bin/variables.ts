@@ -11,8 +11,8 @@ export const workers: IWorker[] = [
   {
     region: "us-east-1",
     cidr: "10.1.0.0/16",
-    // The public s3 dataset on https://registry.opendata.aws/ you wish to connect to
     dataset: "s3://era5-pds",
+    // The public s3 dataset on https://registry.opendata.aws/ you wish to connect to
     lustreFileSystemPath: "era5-pds",
   },
   {

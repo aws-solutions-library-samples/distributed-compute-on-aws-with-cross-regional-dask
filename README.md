@@ -87,16 +87,16 @@ image: ContainerImage.fromRegistry('daskdev/dask:2022.10.0'),
 
 Once all resources have successfully deployed, a Sagemaker Notebook in the _eu-west-2_ should be available. On that notebook should be a series of files; the one of interest is the **ux_notebook.ipynb**. The notebook contains details on it's purpose, however feel free to use the below inputs for a first run.
 
-> Q: Data type <br />
+> Q: Data type<br />
 > A: both
 
-> Q: Which of the above would you like to select? <br />
+> Q: Which of the above would you like to select?<br />
 > A: temperature
 
-> Q: Below are the start and end dates <br />
+> Q: Below are the start and end dates<br />
 > A: Start Date 1st Jan 2022, End Date 28th Nov 2022
 
-> Q: Select all that you would like to be included in the dataset <br />
+> Q: Select all that you would like to be included in the dataset<br />
 > A: ScenarioMIP, CMIP
 
 Any parameters not mentioned above, keep them as default and you should see after running the notebook a graph similiar to the below.

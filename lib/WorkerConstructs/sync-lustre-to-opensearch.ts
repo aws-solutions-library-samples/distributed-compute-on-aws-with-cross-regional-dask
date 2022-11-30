@@ -16,9 +16,9 @@ import { Topic } from "aws-cdk-lib/aws-sns";
 import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import { NagSuppressions } from "cdk-nag";
 import { readFileSync } from "fs";
-import path = require("path");
 import { IClient, IWorker } from "../../bin/interface";
 import { SSMParameterReader } from "../SdkConstructs/ssm-param-reader";
+import path = require("path");
 
 interface SyncLustreToOpenSearchProps extends StackProps {
   client: IClient;

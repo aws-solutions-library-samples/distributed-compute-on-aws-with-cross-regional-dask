@@ -42,7 +42,6 @@ import { PrivateDnsNamespace, Service } from "aws-cdk-lib/aws-servicediscovery";
 import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import { ApplicationLoadBalancer } from "aws-cdk-lib/aws-elasticloadbalancingv2";
 import { NagSuppressions } from "cdk-nag";
-import path = require("path");
 import { secureBucket } from "./secure-bucket";
 import { DockerImageAsset, Platform } from "aws-cdk-lib/aws-ecr-assets";
 import {
@@ -51,6 +50,7 @@ import {
 } from "aws-cdk-lib/custom-resources";
 import { readFileSync } from "fs";
 import { IWorker } from "../../bin/interface";
+import path = require("path");
 
 export interface ClientRegionProps extends StackProps {
   clientCidr: string;

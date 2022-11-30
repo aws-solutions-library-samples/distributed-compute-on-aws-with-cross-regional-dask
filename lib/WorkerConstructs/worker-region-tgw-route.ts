@@ -8,9 +8,9 @@ import {
   CfnTransitGatewayRoute,
   Vpc,
 } from "aws-cdk-lib/aws-ec2";
-import { NagSuppressions } from "cdk-nag";
 import { IClient } from "../../bin/interface";
 import { TransitGatewayRouteTable } from "../SdkConstructs/default-transit-route-table-id";
+import { NagSuppressions } from "cdk-nag";
 
 export interface WorkerRegionTGWRouteProps extends StackProps {
   client: IClient;
