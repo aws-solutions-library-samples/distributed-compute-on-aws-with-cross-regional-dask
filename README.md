@@ -4,7 +4,7 @@ The packaged solution presented in this repository proposes a distributed comput
 
 ## Architecture
 
-![Architecture](Architecture.png)
+![Architecture](images/Architecture.png)
 
 This architecture leverages the [Dask framework](https://docs.dask.org) deployed across multiple AWS regions. Dask is a widely adopted data science framework granting users the capabilities of running complex calculations on large datasets, however now with the added benefit of minimising the movement of data through this sample. No longer are users having to migrate mass public S3 datasets to their location, but rather leveraging [Lustre’s ability to integrate seamlessly with public S3 datasets](https://aws.amazon.com/blogs/aws/enhanced-amazon-s3-integration-for-amazon-fsx-for-lustre).
 
@@ -101,7 +101,7 @@ Once all resources have successfully deployed, a Sagemaker Notebook in the _eu-w
 
 Any parameters not mentioned above, keep them as default and you should see after running the notebook a graph similiar to the below.
 
-![ResultsPredictive](ResultsPredictive.png)
+![ResultsPredictive](images/ResultsPredictive.png)
 
 ## Security
 
