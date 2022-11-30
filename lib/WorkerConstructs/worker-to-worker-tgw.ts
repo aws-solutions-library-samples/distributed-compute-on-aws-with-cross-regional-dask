@@ -10,8 +10,8 @@ import {
 import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import { NagSuppressions } from "cdk-nag";
 import { IWorker } from "../../bin/interface";
-import { AcceptTGWRequestClient } from "../SdkConstructs/accept-tgw-request-client";
 import { SSMParameterReader } from "../SdkConstructs/ssm-param-reader";
+import { AcceptTGWRequestClient } from "../SdkConstructs/accept-tgw-request-client";
 
 export interface WorkerToWorkerTGWProps extends StackProps {
   peerWorker: IWorker;

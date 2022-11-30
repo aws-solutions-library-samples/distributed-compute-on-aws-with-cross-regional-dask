@@ -10,8 +10,8 @@ import {
 } from "aws-cdk-lib/aws-ec2";
 import { NagSuppressions } from "cdk-nag";
 import { IWorker } from "../../bin/interface";
-import { TransitGatewayRouteTable } from "../SdkConstructs/default-transit-route-table-id";
 import { SSMParameterReader } from "../SdkConstructs/ssm-param-reader";
+import { TransitGatewayRouteTable } from "../SdkConstructs/default-transit-route-table-id";
 
 export interface ClientRegionProps extends StackProps {
   peerWorker: IWorker;

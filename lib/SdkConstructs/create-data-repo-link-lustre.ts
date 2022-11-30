@@ -1,12 +1,12 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import {
   AwsCustomResource,
   AwsCustomResourcePolicy,
   AwsSdkCall,
 } from "aws-cdk-lib/custom-resources";
+import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import { Construct } from "constructs";
 
 interface ParameterProps {

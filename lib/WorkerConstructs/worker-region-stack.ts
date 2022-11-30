@@ -39,11 +39,11 @@ import {
   AwsCustomResourcePolicy,
 } from "aws-cdk-lib/custom-resources";
 import { NagSuppressions } from "cdk-nag";
-import path = require("path");
 import { IClient, IWorker } from "../../bin/interface";
 import { AcceptTGWRequestClient } from "../SdkConstructs/accept-tgw-request-client";
 import { CreateDataLinkRepoClient } from "../SdkConstructs/create-data-repo-link-lustre";
 import { SSMParameterReader } from "../SdkConstructs/ssm-param-reader";
+import path = require("path");
 
 export interface WorkerRegionProps extends StackProps {
   client: IClient;

@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: MIT-0
 
 import { Stack } from "aws-cdk-lib";
-import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import {
   BlockPublicAccess,
   Bucket,
   BucketEncryption,
 } from "aws-cdk-lib/aws-s3";
+import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import { NagSuppressions } from "cdk-nag";
 
 // Bucket is for launching a secure bucket for logging access to

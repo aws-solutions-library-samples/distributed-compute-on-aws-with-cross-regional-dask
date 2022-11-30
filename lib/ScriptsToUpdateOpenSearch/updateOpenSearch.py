@@ -3,8 +3,8 @@
 
 from opensearchpy import OpenSearch, RequestsHttpConnection, AWSV4SignerAuth
 from opensearchpy.helpers import bulk
-import boto3
 import requests
+import boto3
 
 local_region = requests.get('http://169.254.169.254/latest/meta-data/placement/region').text
 

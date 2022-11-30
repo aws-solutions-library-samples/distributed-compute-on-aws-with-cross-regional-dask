@@ -10,7 +10,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 nvm install 16
 node -e "console.log('Running Node.js ' + process.version)"
 
-
 ## Install PIP deps on all jupyter envs
 env_name=python3
 source /home/ec2-user/anaconda3/bin/activate $env_name

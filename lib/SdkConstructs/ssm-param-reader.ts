@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT-0
 
 import { PolicyStatement } from "aws-cdk-lib/aws-iam";
-import { AwsCustomResource, AwsSdkCall } from "aws-cdk-lib/custom-resources";
 import { Construct } from "constructs";
+import { AwsCustomResource, AwsSdkCall } from "aws-cdk-lib/custom-resources";
 
 interface SSMParameterReaderProps {
   parameterName: string;

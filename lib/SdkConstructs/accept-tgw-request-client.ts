@@ -1,12 +1,12 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
+import { Construct } from "constructs";
 import {
   AwsCustomResource,
   AwsCustomResourcePolicy,
   AwsSdkCall,
 } from "aws-cdk-lib/custom-resources";
-import { Construct } from "constructs";
 
 interface AcceptTGWRequestClientProps {
   attachmentId: string;
