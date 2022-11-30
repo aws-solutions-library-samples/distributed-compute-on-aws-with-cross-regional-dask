@@ -28,7 +28,6 @@ const clientStack = new ClientRegion(app, "Client-Region", {
 
 // This array will contain the contruct classes of workers which allow us to interconnect them later dynamically
 const WorkerStacks: WorkerRegion[] = [];
-
 // Load through each worker connecting each
 for (const worker of workers) {
   // Create the base infrastucture for workers, not yet connecting them
