@@ -270,7 +270,7 @@ export class WorkerRegion extends Stack {
     );
     // We then create a function which when triggered on a scheduled basis will sync lustre to s3
     this.RepoFn = new Function(this, "Scheduled Lustre Repo Refresh", {
-      runtime: Runtime.NODEJS_16_X,
+      runtime: Runtime.NODEJS_18_X,
       handler: "index.handler",
       code: Code.fromAsset(path.join(__dirname, "..", "LustreRepoTrigger")),
       environment: {
