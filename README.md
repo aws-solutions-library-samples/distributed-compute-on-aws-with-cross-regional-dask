@@ -25,22 +25,6 @@ In order to install all the relevant libraries, execute the following code from 
 npm install
 ```
 
-## Deployment
-
-Once all libraries have been installed, you can proceed in deploying all stacks with the following command.
-
-```bash
-cdk deploy --all
-```
-
-Or if you'd like to skip all manual approvals run:
-
-```bash
-cdk deploy --all --require-approval never
-```
-
-> Stack can take some time to deploy. Expect more than 1 $\frac{1}{2}$ hours to deploy.
-
 ## CDK Deployment Readiness
 
 The sample takes advantage of [AWS Cloud Development Kit (CDK)](https://docs.aws.amazon.com/cdk/index.html) to define infrastructure as code. This section focuses on some of the tools and configurations required in order to successfully deploy the CDK. It highlights steps such as ensuring the deployment machine has the correct version of CDK, bootstrapping each region, quota limits to be able to deploy the resources, and a need for docker to deploy the image, otherwise an alternative if Docker is not possible.
@@ -83,6 +67,22 @@ image: ContainerImage.fromRegistry('daskdev/dask:2022.10.0'),
 // ),
 ```
 
+## Deployment
+
+Once all libraries have been installed, you can proceed in deploying all stacks with the following command.
+
+```bash
+cdk deploy --all
+```
+
+Or if you'd like to skip all manual approvals run:
+
+```bash
+cdk deploy --all --require-approval never
+```
+
+> Stack can take some time to deploy. Expect more than 1 $\frac{1}{2}$ hours to deploy.
+
 ## Testing
 
 Once all resources have successfully deployed, a Sagemaker Notebook in the _eu-west-2_ should be available. On that notebook should be a series of files; the one of interest is the **ux_notebook.ipynb**. The notebook contains details on it's purpose, however feel free to use the below inputs for a first run.
@@ -103,6 +103,14 @@ Any parameters not mentioned above, keep them as default and you should see afte
 
 ![ResultsPredictive](images/ResultsPredictive.png)
 
+## Clean up
+
+Clean up is simple and easy when you develop using the CDK. In order to clean up your account run the following command to destroy resources relating to this project:
+
+```bash
+cdk destroy --all
+```
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
@@ -112,7 +120,9 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 This library is licensed under the MIT-0 License. See the LICENSE file.
 
 ## Content Security Legal Disclaimer
+
 The sample code; software libraries; command line tools; proofs of concept; templates; or other related technology (including any of the foregoing that are provided by our personnel) is provided to you as AWS Content under the AWS Customer Agreement, or the relevant written agreement between you and AWS (whichever applies). You should not use this AWS Content in your production accounts, or on production or other critical data. You are responsible for testing, securing, and optimizing the AWS Content, such as sample code, as appropriate for production grade use based on your specific quality control practices and standards. Deploying AWS Content may incur AWS charges for creating or using AWS chargeable resources, such as running Amazon EC2 instances or using Amazon S3 storage.
 
 ## Operational Metrics Collection
+
 This solution collects anonymous operational metrics to help AWS improve the quality and features of the solution. Data collection is subject to the AWS Privacy Policy (https://aws.amazon.com/privacy/). To opt out of this feature, simply remove the tag(s) starting with “uksb-” or “SO” from the description(s) in any CloudFormation templates or CDK TemplateOptions.
