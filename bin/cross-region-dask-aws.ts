@@ -24,7 +24,7 @@ const clientStack = new ClientRegion(app, "Client-Region", {
   },
   clientCidr: client.cidr,
   workers,
-  description: "Reference for distributed compute on AWS with cross regional DASK ('uksb-1tsflhnc4')",
+  description: "Guidance for Distributed Compute on AWS with Cross Regional Dask (SO9190)",
 });
 
 // This array will contain the contruct classes of workers which allow us to interconnect them later dynamically
